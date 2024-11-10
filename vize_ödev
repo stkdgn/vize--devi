@@ -1,0 +1,14 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+data = {'Ay': ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran'],
+    'Satışlar': [250, 270, 340, 300, 310, 450]}
+df = pd.DataFrame(data)
+ortalama_satis = df['Satışlar'].mean()
+print("Ortalama Satış:", ortalama_satis)
+plt.plot(df['Ay'], df['Satışlar'], marker='o', color='b', linestyle='-')
+plt.title("Aylık Satışlar")
+plt.xlabel("Ay")
+plt.ylabel("Satış Miktarı")
+plt.axhline(ortalama_satis, color='r', linestyle='--', label=f'Ortalama: {ortalama_satis}')
+plt.legend()
+plt.show()
